@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://anshuman1803.github.io/PeerDrop--Website/sitemap.xml
+Sitemap: https://anshuman1803.github.io/PeerDrop/sitemap.xml
