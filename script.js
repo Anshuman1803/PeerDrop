@@ -1,5 +1,25 @@
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.site-nav');
+
+const downloadLinks = document.querySelectorAll('.download-card .button');
+const downloadConfig = window.PEERDROP_DOWNLOADS ?? {};
+downloadLinks.forEach((link, index) => {
+  const platform = index === 0 ? 'windows' : 'android';
+  const url = typeof downloadConfig[platform] === 'string' ? downloadConfig[platform].trim() : '';
+  link.classList.add('download-link');
+  link.dataset.download = platform;
+  if (!url) {
+    link.classList.add('is-disabled');
+    link.setAttribute('aria-disabled', 'true');
+    link.setAttribute('title', 'Download link coming soon');
+    link.removeAttribute('href');
+    link.addEventListener('click', (event) => event.preventDefault());
+    return;
+  }
+  link.setAttribute('href', url);
+  link.setAttribute('aria-disabled', 'false');
+  link.classList.remove('is-disabled');
+});
 menuButton?.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
   menuButton.setAttribute('aria-expanded', String(open));
