@@ -52,7 +52,8 @@
       </div>
       <div class="hero-visual" aria-label="Illustration of a direct PeerDrop transfer between Android and Windows">
         <div class="hero-poster-grid"></div>
-        <img class="hero-device-art" src="assets/hero-devices.png" alt="Windows laptop and Android devices sharing a file through PeerDrop" />
+        <img class="hero-device-art" src="assets/hero-devices.png"
+          alt="Windows laptop and Android devices sharing a file through PeerDrop" />
         <div class="hero-transfer-card">
           <div class="hero-transfer-head"><span><i></i> LIVE TRANSFER</span><b>PEERDROP</b></div>
           <div class="hero-route">
@@ -114,41 +115,44 @@
           <h2>Everything you need for everyday device-to-device sharing.</h2>
           <p>Built around the real flows in the Windows and Android apps.</p>
         </div>
-        <div class="feature-grid">
-          <article class="feature-card feature-wide"><span class="feature-icon blue">⌁</span>
-            <div>
+        <div class="feature-explorer" data-feature-explorer>
+          <div class="feature-menu" role="tablist" aria-label="PeerDrop features">
+            <button class="feature-tab is-active" type="button" role="tab" aria-selected="true"
+              data-feature="discovery"><span>01</span><strong>Nearby discovery</strong><small>Find devices on your local
+                network</small></button>
+            <button class="feature-tab" type="button" role="tab" aria-selected="false"
+              data-feature="send"><span>02</span><strong>Send files</strong><small>Choose files and
+                recipients</small></button>
+            <button class="feature-tab" type="button" role="tab" aria-selected="false"
+              data-feature="receive"><span>03</span><strong>Receive safely</strong><small>Approve incoming
+                requests</small></button>
+            <button class="feature-tab" type="button" role="tab" aria-selected="false"
+              data-feature="controls"><span>04</span><strong>Transfer controls</strong><small>Pause, resume, or
+                cancel</small></button>
+            <button class="feature-tab" type="button" role="tab" aria-selected="false"
+              data-feature="trust"><span>05</span><strong>Pairing &amp; trust</strong><small>Manage verified
+                devices</small></button>
+            <button class="feature-tab" type="button" role="tab" aria-selected="false"
+              data-feature="history"><span>06</span><strong>History &amp; files</strong><small>Review activity and
+                storage</small></button>
+            <button class="feature-tab" type="button" role="tab" aria-selected="false"
+              data-feature="settings"><span>07</span><strong>Settings</strong><small>Shape the sharing
+                workflow</small></button>
+          </div>
+          <article class="feature-detail" role="tabpanel" data-feature-detail>
+            <div class="feature-detail-copy">
+              <p class="feature-detail-kicker">PEERDROP / NEARBY</p>
               <h3>Nearby discovery</h3>
-              <p>Find PeerDrop devices on your local network with explicit discovery states for empty, searching, and
-                error conditions.</p><span class="feature-tag">Local network</span>
+              <p>Find PeerDrop devices on your local network with explicit empty, searching, and error states. Connected
+                devices and new discoveries stay distinct.</p>
+              <div class="feature-detail-tags"><span>Local network</span><span>Windows + Android</span></div>
             </div>
-          </article>
-          <article class="feature-card"><span class="feature-icon">↗</span>
-            <h3>Send files</h3>
-            <p>Pick multiple files, select connected recipients, review the transfer, and follow progress.</p>
-          </article>
-          <article class="feature-card"><span class="feature-icon">↙</span>
-            <h3>Receive safely</h3>
-            <p>Review incoming requests, approve or decline them, and see clear security context before files arrive.
-            </p>
-          </article>
-          <article class="feature-card"><span class="feature-icon">◌</span>
-            <h3>Transfer controls</h3>
-            <p>Pause, resume, or cancel a transfer at the group or individual-file level.</p>
-          </article>
-          <article class="feature-card"><span class="feature-icon">⌁</span>
-            <h3>Pairing & trust</h3>
-            <p>Manage saved devices, pair with one-time codes, set approval behavior, and revoke pairing.</p>
-          </article>
-          <article class="feature-card"><span class="feature-icon">▤</span>
-            <h3>History & files</h3>
-            <p>Review sent and received activity, including completed, failed, cancelled, and active records. Choose
-              where verified received files are saved.</p>
-          </article>
-          <article class="feature-card feature-wide"><span class="feature-icon">⚙</span>
-            <div>
-              <h3>Settings that match your workflow</h3>
-              <p>Configure permissions for your own devices, friends, and other devices. Windows also includes tray
-                behavior and sign-in startup options.</p><span class="feature-tag">Windows + Android</span>
+            <div class="app-screen app-screen-discovery">
+              <div class="app-screen-top"><b>PeerDrop</b><span>Ready to share</span></div>
+              <div class="radar"><i></i><i></i><strong>P</strong><span
+                  class="radar-device radar-device-one">Android</span><span
+                  class="radar-device radar-device-two">Windows</span></div>
+              <div class="screen-status"><span></span> Searching for nearby devices</div>
             </div>
           </article>
         </div>

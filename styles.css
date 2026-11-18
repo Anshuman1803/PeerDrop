@@ -11,6 +11,273 @@
     --content: 1160px;
 }
 
+.feature-explorer {
+    display: grid;
+    grid-template-columns: minmax(260px, .78fr) minmax(0, 1.22fr);
+    gap: 18px;
+    align-items: stretch
+}
+
+.feature-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.feature-tab {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 12px;
+    width: 100%;
+    padding: 15px 16px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--muted);
+    text-align: left;
+    font: inherit;
+    cursor: pointer;
+    transition: border-color .2s, background .2s, color .2s
+}
+
+.feature-tab>span {
+    grid-row: 1 / span 2;
+    color: var(--muted);
+    font: 700 11px 'Space Grotesk', sans-serif;
+    padding-top: 2px
+}
+
+.feature-tab strong {
+    color: var(--ink);
+    font: 600 15px 'Space Grotesk', sans-serif
+}
+
+.feature-tab small {
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: 12px
+}
+
+.feature-tab:hover, .feature-tab.is-active {
+    border-color: var(--ink);
+    background: var(--soft)
+}
+
+.feature-tab.is-active>span, .feature-tab.is-active small {
+    color: var(--ink)
+}
+
+.feature-detail {
+    display: grid;
+    grid-template-columns: minmax(190px, .82fr) minmax(260px, 1.18fr);
+    gap: 24px;
+    align-items: center;
+    min-height: 430px;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface)
+}
+
+.feature-detail-copy {
+    align-self: start
+}
+
+.feature-detail-kicker {
+    margin: 0 0 14px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .14em
+}
+
+.feature-detail h3 {
+    margin: 0;
+    font: 32px/1.08 'Space Grotesk', sans-serif;
+    letter-spacing: -.04em
+}
+
+.feature-detail-copy>p:not(.feature-detail-kicker) {
+    margin: 17px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7
+}
+
+.feature-detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 22px
+}
+
+.feature-detail-tags span {
+    padding: 5px 8px;
+    border: 1px solid var(--line);
+    border-radius: 99px;
+    color: var(--ink);
+    font-size: 10px;
+    font-weight: 700
+}
+
+.app-screen {
+    min-height: 310px;
+    padding: 15px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--soft);
+    box-shadow: 0 15px 30px var(--line)
+}
+
+.app-screen-top {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 13px;
+    border-bottom: 1px solid var(--line);
+    font-size: 11px
+}
+
+.app-screen-top span {
+    color: var(--muted);
+    font-size: 10px
+}
+
+.radar {
+    position: relative;
+    display: grid;
+    width: 220px;
+    height: 220px;
+    place-items: center;
+    margin: 25px auto 13px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--surface)
+}
+
+.radar i {
+    position: absolute;
+    border: 1px solid var(--line);
+    border-radius: 50%
+}
+
+.radar i:first-child {
+    width: 150px;
+    height: 150px
+}
+
+.radar i:nth-child(2) {
+    width: 82px;
+    height: 82px
+}
+
+.radar strong {
+    display: grid;
+    width: 46px;
+    height: 46px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--surface);
+    font: 700 18px 'Space Grotesk'
+}
+
+.radar-device {
+    position: absolute;
+    padding: 6px 8px;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    background: var(--surface);
+    color: var(--ink);
+    font-size: 9px;
+    font-weight: 700
+}
+
+.radar-device-one {
+    top: 22px;
+    left: 12px
+}
+
+.radar-device-two {
+    right: 10px;
+    bottom: 27px
+}
+
+.screen-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    font-size: 10px
+}
+
+.screen-status span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ink)
+}
+
+@media (max-width: 850px) {
+    .feature-explorer {
+        display: flex;
+        flex-direction: column
+    }
+
+    .feature-menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .feature-detail {
+        grid-template-columns: 1fr;
+        min-height: 0
+    }
+
+    .app-screen {
+        min-height: 290px
+    }
+}
+
+@media (max-width: 520px) {
+    .feature-menu {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        padding-bottom: 6px;
+        scrollbar-width: thin
+    }
+
+    .feature-tab {
+        flex: 0 0 220px
+    }
+
+    .feature-detail {
+        padding: 20px
+    }
+
+    .feature-detail h3 {
+        font-size: 28px
+    }
+
+    .radar {
+        width: 190px;
+        height: 190px
+    }
+
+    .radar i:first-child {
+        width: 130px;
+        height: 130px
+    }
+
+    .radar i:nth-child(2) {
+        width: 70px;
+        height: 70px
+    }
+}
+
 * {
     box-sizing: border-box;
 }
@@ -521,13 +788,13 @@ h1, h2 {
     font: 700 12px 'Space Grotesk', sans-serif;
 }
 
-.steps h3, .feature-card h3, .download-card h3 {
+.steps h3, .download-card h3 {
     margin: 22px 0 8px;
     font: 21px 'Space Grotesk', sans-serif;
     letter-spacing: -.03em;
 }
 
-.steps p, .feature-card p, .download-card p {
+.steps p, .download-card p {
     margin: 0;
     color: var(--muted);
     font-size: 14px;
@@ -538,34 +805,7 @@ h1, h2 {
     background: var(--soft);
 }
 
-.feature-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-.feature-card {
-    flex: 1 1 30%;
-    min-width: 260px;
-    min-height: 230px;
-    padding: 25px;
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    background: var(--surface);
-}
-
-.feature-card:hover {
-    border-color: var(--ink);
-}
-
-.feature-wide {
-    display: flex;
-    flex: 1 1 calc(66.66% - 8px);
-    gap: 20px;
-    min-height: 194px;
-}
-
-.feature-icon, .download-mark {
+.download-mark {
     display: grid;
     width: 40px;
     height: 40px;
@@ -575,25 +815,6 @@ h1, h2 {
     background: var(--soft);
     color: var(--ink);
     font-size: 22px;
-}
-
-.feature-card h3 {
-    margin-top: 21px;
-}
-
-.feature-wide h3 {
-    margin-top: 0;
-}
-
-.feature-tag {
-    display: inline-block;
-    margin-top: 22px;
-    padding: 4px 8px;
-    border-radius: 99px;
-    background: var(--soft);
-    color: var(--ink);
-    font-size: 11px;
-    font-weight: 700;
 }
 
 .security-section {
@@ -688,7 +909,8 @@ h1, h2 {
 }
 
 .faq-list {
-    max-width: 800px;
+    width: 100%;
+    margin-inline: auto;
     border-top: 1px solid var(--line);
 }
 
@@ -720,7 +942,7 @@ details[open] summary::after {
 }
 
 details p {
-    max-width: 680px;
+    width: 80%;
     margin: 12px 0 0;
     color: var(--ink);
     font-size: 14px;
@@ -864,11 +1086,11 @@ details p {
         border-bottom: 0;
     }
 
-    .feature-grid, .download-grid {
+    .download-grid {
         flex-direction: column;
     }
 
-    .feature-card, .feature-wide, .download-card {
+    .download-card {
         flex: 1 1 100%;
         width: 100%;
     }
@@ -923,14 +1145,6 @@ details p {
         margin-inline: -24px;
     }
 
-    .feature-wide {
-        display: block;
-    }
-
-    .feature-wide .feature-icon {
-        margin-bottom: 20px;
-    }
-
     .footer-wrap {
         gap: 25px;
     }
@@ -940,4 +1154,147 @@ details p {
         gap: 5px;
         text-align: center;
     }
+}
+
+.screen-list, .history-row, .settings-row, .request-card, .transfer-row {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.screen-list, .history-row, .settings-row {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line)
+}
+
+.screen-file-icon, .request-avatar {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    border-radius: 8px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    font-weight: 700
+}
+
+.screen-list div, .history-row div, .request-card div, .transfer-row div {
+    flex: 1
+}
+
+.screen-list b, .screen-list small, .history-row b, .history-row small, .request-card b, .request-card small, .transfer-row b, .transfer-row small {
+    display: block
+}
+
+.screen-list small, .history-row small, .request-card small, .transfer-row small {
+    color: var(--muted);
+    font-size: 10px
+}
+
+.screen-action {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+    padding: 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font-size: 11px
+}
+
+.screen-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 18px
+}
+
+.screen-actions button {
+    padding: 7px 10px;
+    border: 1px solid var(--ink);
+    border-radius: 7px;
+    background: var(--surface);
+    color: var(--ink);
+    font: 600 10px 'DM Sans', sans-serif
+}
+
+.screen-actions button:last-child {
+    background: var(--ink);
+    color: var(--surface)
+}
+
+.transfer-row {
+    margin-top: 22px
+}
+
+.transfer-row>div i {
+    display: block;
+    height: 4px;
+    margin-top: 8px;
+    border-radius: 4px;
+    background: var(--line)
+}
+
+.transfer-row>div i em {
+    display: block;
+    width: 68%;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--ink)
+}
+
+.pair-code {
+    margin: 28px 0 10px;
+    text-align: center;
+    letter-spacing: .28em;
+    font: 700 30px 'Space Grotesk', sans-serif
+}
+
+.screen-helper {
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-size: 11px;
+    text-align: center
+}
+
+.history-row {
+    gap: 12px
+}
+
+.history-row>span {
+    display: grid;
+    width: 25px;
+    height: 25px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--surface);
+    font-size: 11px
+}
+
+.history-row>strong {
+    font-size: 10px
+}
+
+.settings-row {
+    justify-content: space-between
+}
+
+.settings-row span {
+    color: var(--muted)
+}
+
+.feature-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px
+}
+
+.feature-detail-copy {
+    width: 100%
+}
+
+.app-screen {
+    width: 100%;
+    min-height: 360px
 }
